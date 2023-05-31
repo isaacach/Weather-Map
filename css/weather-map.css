@@ -1,0 +1,131 @@
+body {
+    background: rgba(66,77,92);
+    font-family: Roboto, sans-serif;
+}
+
+header{
+    height: 50px;
+    color: rgba(255,255,255,0.8);
+}
+
+.page-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.map.container {
+    position: relative;
+}
+
+.column.current {
+    max-width: 400px;
+}
+
+#map {
+    position: absolute;
+    z-index: 0;
+}
+
+.map-button {
+    position: absolute;
+    width: 150px;
+    height: 30px;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #475262, #3b4553);
+    box-shadow:  3px 3px 6px #38414e,
+    -3px -3px 6px #4c596a;
+    color: #121520;
+    z-index: 1;
+    top: 10px;
+    right: 30px
+}
+
+
+.container.main.hide {
+    position: absolute;
+    z-index: 3;
+    top: 110%;
+    transition-duration: .5s;
+    width: 100%;
+}
+
+.container.main {
+    position: absolute;
+    width: 100%;
+    top: 60px;
+    z-index: 3;
+    transition-duration: .5s;
+}
+
+.title {
+    font-size: 50px;
+    color: rgba(255,255,255,0.8);
+}
+
+.row.user, .row.city {
+    padding: 0;
+}
+
+input#location {
+    border-radius: 5px;
+    border: 5px solid dimgrey;
+    padding: 5px;
+}
+#search {
+    padding: 5px;
+    border-radius: 5px;
+    border: 5px solid dimgrey;
+}
+
+#today-weather {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    color: rgba(255,255,255,0.8);
+    border: 1px solid black;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 75%;
+}
+
+
+.row.main {
+    height: 90vh;
+    justify-content: space-between;
+}
+
+.weather {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 95%;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    color: rgba(255,255,255,0.8);
+    padding: 5px;
+}
+
+.row.four-day {
+    padding: 0;
+    gap: 10px;
+}
+
+.day {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.data {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.weather-icon {
+    width: 200px;
+    align-self: center;
+}
+
