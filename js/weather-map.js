@@ -1,4 +1,5 @@
-import {keys} from './keys.js'
+import {keys} from './newKeys.js'
+import {geocode} from './geocode-utils.js'
 
 mapboxgl.accessToken = keys.mapbox;
 
@@ -35,10 +36,9 @@ const getWeather = async (long = -98.48537, lat = 29.423817) => {
         weather += "<div class='data'>Wind Speed: "  + "<span class='temp'>"+ Math.round(data.wind.speed) +" mph</span>" + "</div>" ;
         weather += "<div class='data'>Humidity: "  + "<span class='temp'>"+ data.main.humidity +"%</span>" + "</div>" ;
         weather += "<div class='data'>"  + "<span class='temp'>"+ data.weather[0].description +"</span>" + " </div>";
-        weather += "<div class='icon'>"  + "<img class='weather-icon' alt='weather' src=''>" + " </div>";
+        weather += `<div class='icon'><img class='weather-icon' alt='weather' src='https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png'></div>`;
         weather += "</div>"
         document.querySelector('#today-weather').innerHTML = weather;
-        document.querySelector('.weather-icon').src = icon(data.weather[0].description);
         console.log(data);
     } catch (error) {
         console.log(error);
@@ -59,6 +59,7 @@ const getFourDayWeather = async (long = -98.48537, lat = 29.423817) => {
             weather += "<div class='data'>Humidity: " + "<span class='temp'>" + data.list[i * 8].main.humidity + "%</span>" + "</div>";
             weather += "<div class='data'>Wind Speed: " + "<span class='temp'>" + Math.round(data.list[i * 8].wind.speed) + " mph</span>" + "</div>";
             weather += "<div class='data'>" + "<span class='temp'>" + data.list[i * 8].weather[0].description + "</span>" + " </div>";
+            weather += `<div class='icon'><img class='weather-icon' alt='weather' src='https://openweathermap.org/img/wn/${data.list[i * 8].weather[0].icon}@2x.png'></div>`;
             weather += "</div>"
             document.querySelector(`[data-dbid='${i}']`).innerHTML = weather;
 
