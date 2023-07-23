@@ -80,8 +80,6 @@ document.querySelector('#search').addEventListener('click', async(e)=> {
     console.log(coords);
     let currentData = await getWeather(coords[0], coords[1]);
     let fourDayData = await getFourDayWeather(coords[0], coords[1]);
-    console.log(currentData);
-    console.log(fourDayData);
     if(marker) {
         marker.remove();
     }
@@ -124,29 +122,7 @@ marker.on('dragend', onDragEnd);
 getWeather()
 getFourDayWeather()
 
-// switch case function to get icons
-function icon(desc) {
-    switch (desc) {
-        case ('clear sky'):
-            return 'images/clear-sky.png';
-        case ('few clouds'):
-            return 'images/cloudy.png';
-        case ('scattered clouds'):
-            return 'images/cloudy.png';
-        case ('broken clouds'):
-            return 'images/cloudy.png';
-        case ('shower rain'):
-            return 'images/shower-rain.png'
-        case ('rain'):
-            return 'images/rain.png'
-        case ('thunderstorm'):
-            return 'images/thunderstorm.png'
-        case ('snow'):
-            return 'images/snow.png'
-        case ('mist'):
-            return 'images/mist.png'
-    }
-}
+
 
 
 

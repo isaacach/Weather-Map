@@ -1,78 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Weather Map</title>
 
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js'></script>
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/resets.css">
-    <link rel="stylesheet" href="css/weather-map.css">
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet'>
-</head>
-<body>
-<div class="page-wrapper">
-    <header class="container">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js"></script>
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/resets.css" />
+    <link rel="stylesheet" href="css/weather-map.css" />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <header class="container">
         <div class="row justify-center align-center">
-            <div class="column shrink">
-                <h1>Weather Forecast</h1>
-            </div>
+          <div class="column shrink">
+            <h1>Weather Forecast</h1>
+          </div>
         </div>
-    </header>
-    <div class="map-container">
-        <div id='map' style='width: 100%; height: 100%;'></div>
+      </header>
+      <div class="map-container">
+        <div id="map" style="width: 100%; height: 100%"></div>
         <button class="map-button">Toggle Overlay</button>
-    </div>
+      </div>
 
-    <div class="container main">
+      <div class="container main">
         <div class="row main">
-            <div class="column current justify-space-between ">
-                <div class="row city justify-center">
-                    <h1 class="title"></h1>
-                </div>
-                <div class="row user align-center justify-center grow">
-                    <div class="search-wrap">
-                        <div class="search">
-                            <input type="text" id="location" placeholder="search a location">
-                            <button type="submit" id="search">Search
-                            </button>
-                        </div>
+          <div class="column justify-center">
+            <div class="row align-center">
+                <div class="search-container">
+                    <div class="row city justify-center">
+                      <h1 class="title"></h1>
                     </div>
-                </div>
-                <div id="today-weather">
-                    <img class="weather-icon" src="" alt="weather">
-                </div>
+                    <div class="search">
+                      <input
+                        type="text"
+                        id="location"
+                        placeholder="search a location"
+                      />
+                      <button type="submit" id="search">Search</button>
+                    </div>
+                  </div>
+                <div id="today-weather"></div>
             </div>
-            <div class="column">
-                <div class="column four-day">
-                    <div class="row justify-center align-center four-day grow">
-                        <div data-dbid="1" class="weather">
-
-                        </div>
-                        <div data-dbid="2" class="weather">
-
-                        </div>
-                    </div>
-                    <div class="row justify-center align-center four-day grow">
-                        <div data-dbid="3" class="weather">
-
-                        </div>
-                        <div data-dbid="4" class="weather">
-
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="row four-day">
+              <div data-dbid="1" class="weather"></div>
+              <div data-dbid="2" class="weather"></div>
+              <div data-dbid="3" class="weather"></div>
+              <div data-dbid="4" class="weather"></div>
+            </div>     
+          </div>
         </div>
+      </div>
+
+      <script></script>
     </div>
-
-    <script>
-
-
-
-    </script>
-</div>
-<script src="js/jquery.js"></script>
-<script type="module" src="js/weather-map.js"></script>
-</body>
+    <script src="js/jquery.js"></script>
+    <script type="module" src="js/weather-map.js"></script>
+  </body>
 </html>
